@@ -175,7 +175,8 @@
     author: meta.authors.map(a => _plain(a.name)),
     description: description,
     keywords: keywords,
-    date: if type(meta.date) == datetime { meta.date } else { auto },
+    // A date given as content cannot be stored in the PDF metadata, so it is left out.
+    date: if type(meta.date) == datetime { meta.date } else { none },
   )
   set text(lang: lang) if lang != auto
   set text(region: region) if region != auto
