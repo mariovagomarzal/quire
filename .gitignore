@@ -7,6 +7,6 @@ devenv.local.nix
 /build/
 *.pdf
 
-# The manual and the examples are committed so that they can be read from the repository.
+# The manual, the examples and the README preview are committed so that they can be read from the repository.
 !docs/manual.pdf
 !examples/*.pdf

@@ -3,7 +3,7 @@
 A classical Typst template for books, reports and articles: EB Garamond text with small caps, quiet sans-serif
 labels, thin golden rules and generous margins, ready for print and for screens.
 
-![Title page of the template](thumbnail.png)
+![Pages of a book and an article typeset with quire](https://raw.githubusercontent.com/mariovagomarzal/quire/main/docs/preview.png)
 
 A _quire_ is a gathering of folded sheets, the unit books are sewn from.
 

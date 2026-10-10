@@ -29,8 +29,13 @@ manual: examples
     {{typst}} compile --root . docs/manual.typ docs/manual.pdf
 
 [group("build")]
-[doc("Compile the PDFs committed to the repository: the examples and the manual.")]
-pdfs: examples manual
+[doc("Render the preview image of the README (after the examples, whose pages it shows).")]
+preview: examples
+    {{typst}} compile --root . --ppi 200 docs/preview.typ docs/preview.png
+
+[group("build")]
+[doc("Compile the files committed to the repository: the examples, the manual and the README preview.")]
+pdfs: examples manual preview
 
 [group("build")]
 [doc("Compile the template of `typst init` and render the thumbnail from its first page.")]

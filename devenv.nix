@@ -28,7 +28,7 @@
       files = "\\.typ$";
     };
 
-    # Keep the committed PDFs (manual and examples) in sync with their sources: when a source is staged, rebuild the
+    # Keep the committed PDFs (manual and examples) and the README preview in sync with their sources: when a source is staged, rebuild the
     # PDFs; if any of them changes, the commit is aborted so that the updated PDFs can be staged too. The build is
     # deterministic, so unchanged sources give byte-identical PDFs. It uses the system fonts.
     pdfs = {
