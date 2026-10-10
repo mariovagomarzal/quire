@@ -1,5 +1,6 @@
 /// This module maps heading levels to structural roles (part, chapter, section, subsection) according to the
 /// `top-level` option, and renders each role.
+#import "@preview/num2words:0.2.0": num2words
 #import "config.typ": _config, _rule, _ui
 #import "i18n.typ": translate
 #import "layout.typ": _recto-break
@@ -152,7 +153,14 @@
   it,
 ) = {
   if it.numbering != none {
-    _ui(cfg, size: 10 / 12 * 1em, upper(it.supplement))
+    // Chapters spell their number out in the label ("Chapter one"), except in the appendix, where they are lettered.
+    let label = if _role(cfg, it.level) == "chapter" and not _in-appendix.get() {
+      let number = counter(heading).get().at(it.level - 1)
+      [#it.supplement #num2words(number, fallback: "en")]
+    } else {
+      it.supplement
+    }
+    _ui(cfg, size: 10 / 12 * 1em, upper(label))
     v(1.25em, weak: true)
     text(size: 5em, counter(heading).display(it.numbering))
     v(25 / 12 * 1em, weak: true)
