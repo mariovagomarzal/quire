@@ -17,6 +17,8 @@ A _quire_ is a gathering of folded sheets, the unit books are sewn from.
   contents, or a title block for articles.
 - **Localized** in English, Spanish and Catalan.
 - **Customizable** fonts and colors.
+- Bibliographies with a localized title and Typst's default style, which you can change with
+  `#set bibliography(style: ...)`.
 - Theorem-like environments (with [theorion](https://typst.app/universe/package/theorion)), code listings (with
   [codly](https://typst.app/universe/package/codly)), appendices, and figures and equations numbered within
   sections.
@@ -43,7 +45,16 @@ or, in an existing document:
 = Introduction
 ```
 
-See the [manual](docs/manual.pdf) for every option, and [`examples/`](examples) for an article and a book.
+See the [**manual**][manual] for every option. The examples show the template at work:
+
+- [An article][article] in English, divided in sections, for screens ([source][article-source]).
+- [A book][book] in Spanish, divided in parts, for print ([source][book-source]).
+
+[manual]: https://github.com/mariovagomarzal/quire/blob/main/docs/manual.pdf
+[article]: https://github.com/mariovagomarzal/quire/blob/main/examples/article.pdf
+[article-source]: https://github.com/mariovagomarzal/quire/blob/main/examples/article.typ
+[book]: https://github.com/mariovagomarzal/quire/blob/main/examples/book.pdf
+[book-source]: https://github.com/mariovagomarzal/quire/blob/main/examples/book.typ
 
 ### Fonts
 
@@ -71,15 +82,19 @@ Dates given as `datetime` are shown with English month names, since Typst does n
 The development environment is managed with [devenv](https://devenv.sh). Enter it with `devenv shell`, which also
 installs the git hooks (Conventional Commits, typstyle, markdownlint, alejandra), and run `just` to list the recipes:
 
-- `just build` compiles the manual, the examples and the template, and renders the thumbnail.
+- `just pdfs` compiles the examples and the manual, which are committed to the repository.
+- `just build` also compiles the template and renders the thumbnail.
 - `just watch <file>` recompiles a file on changes.
 - `just format` formats the Typst sources; `just check` runs every hook on every file.
 
 The template and the examples import `@preview/quire`; the recipes expose the working tree under that name through
 `build/packages`.
 
+The committed PDFs are kept in sync with their sources by a `pdfs` git hook: when a commit touches the sources, it
+rebuilds the PDFs and, if any of them changed, aborts the commit so that they can be staged too. The build is
+deterministic (documents have fixed dates or none), so unchanged sources give byte-identical PDFs. The hook needs the
+fonts of the default style.
+
 ## License
 
-The package is distributed under the [MIT license](LICENSE). The citation style `src/assets/quire.csl` is a
-derivative of the [IEEE CSL style](https://www.zotero.org/styles/ieee), distributed under
-[CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+The package is distributed under the [MIT license](LICENSE).

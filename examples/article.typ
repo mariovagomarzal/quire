@@ -8,6 +8,7 @@
     (name: "Jane Doe", affiliation: [Institute of Book History], email: "jane@example.org"),
     (name: "John Roe", affiliation: [School of Typography]),
   ),
+  date: datetime(year: 2026, month: 6, day: 1),
   lang: "en",
   top-level: "section",
   output: "digital",

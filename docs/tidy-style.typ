@@ -4,7 +4,7 @@
 #import "/src/lib.typ": default-colors, default-fonts
 
 #let _colors = default-colors
-#let _tint = _colors.rule.lighten(88%)
+#let _tint = luma(96%)
 
 
 #let show-outline(module-doc, style-args: (:)) = {
@@ -21,7 +21,7 @@
 #let show-type(type, style-args: (:)) = box(
   inset: (x: 0.25em),
   outset: (y: 0.2em),
-  stroke: 0.4pt + _colors.rule,
+  stroke: 0.4pt + luma(80%),
   radius: 1pt,
   text(fill: _colors.muted, raw(type, lang: none)),
 )
@@ -59,7 +59,7 @@
     breakable: style-args.break-param-descriptions,
     above: 1.2em,
     inset: (left: 1em),
-    stroke: (left: 0.6pt + _colors.rule),
+    stroke: (left: 0.6pt + luma(85%)),
     {
       set par(first-line-indent: 0pt)
       let shown = text(fill: _colors.link, raw(name, lang: none))
