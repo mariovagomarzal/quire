@@ -12,6 +12,7 @@
   packages = with pkgs; [
     git
     just
+    oxipng
   ];
 
   # Git hooks, installed when entering the shell.
@@ -50,6 +51,9 @@
         MD013.line_length = 120;
       };
     };
+
+    # Check spelling (see `_typos.toml`).
+    typos.enable = true;
 
     # Format Nix files.
     alejandra.enable = true;

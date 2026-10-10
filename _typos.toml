@@ -1,0 +1,9 @@
+# Spell checking with typos. Words in Spanish and Catalan (localized strings, examples) and Typst label prefixes are
+# not English typos.
+[default.extend-words]
+autor = "autor"
+autors = "autors"
+thm = "thm"
+
+[files]
+extend-exclude = ["examples/book.typ", "*.pdf", "*.png"]

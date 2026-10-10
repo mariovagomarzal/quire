@@ -43,6 +43,7 @@ template: link
     mkdir -p build
     {{typst}} compile --package-path {{packages}} template/main.typ build/template.pdf
     {{typst}} compile --package-path {{packages}} --pages 1 --ppi 250 template/main.typ thumbnail.png
+    oxipng --opt max --strip safe thumbnail.png
 
 [group("build")]
 [doc("Compile everything.")]
