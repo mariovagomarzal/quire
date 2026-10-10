@@ -1,8 +1,8 @@
-/// This module configures citations and the bibliography.
+/// This module configures the bibliography.
 #import "i18n.typ": translate
 
-/// Applies the bibliography settings: alphanumeric citation keys, a variant of the IEEE style, and a localized,
-/// unnumbered title at the level of chapters (or sections, without chapters).
+/// Applies the bibliography settings: a localized, unnumbered title at the level of chapters (or sections, without
+/// chapters). The citation and bibliography styles are left to Typst's defaults, to be set by the user.
 ///
 /// -> content
 #let _bibliography-setup(
@@ -13,8 +13,7 @@
   /// -> content
   body,
 ) = {
-  set cite(style: "alphanumeric")
-  set bibliography(title: translate("bibliography"), style: "assets/quire.csl")
+  set bibliography(title: translate("bibliography"))
 
   let level = cfg.levels.at("chapter", default: cfg.levels.section)
   show bibliography: set heading(numbering: none, offset: level - 1)
