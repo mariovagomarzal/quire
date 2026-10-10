@@ -1,0 +1,11 @@
+# devenv.
+.devenv*
+devenv.local.nix
+.pre-commit-config.yaml
+
+# Build outputs.
+/build/
+*.pdf
+
+# The manual is committed so that the README can link to it.
+!docs/manual.pdf
