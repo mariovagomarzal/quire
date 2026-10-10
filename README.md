@@ -3,7 +3,7 @@
 A classical Typst template for books, reports and articles: EB Garamond text with small caps, quiet sans-serif
 labels, thin golden rules and generous margins, ready for print and for screens.
 
-![Pages of a book and an article typeset with quire](https://raw.githubusercontent.com/mariovagomarzal/quire/main/docs/preview.png)
+![Pages of a book and an article typeset with quire](docs/preview.png)
 
 A _quire_ is a gathering of folded sheets, the unit books are sewn from.
 
@@ -50,11 +50,11 @@ See the [**manual**][manual] for every option. The examples show the template at
 - [An article][article] in English, divided in sections, for screens ([source][article-source]).
 - [A book][book] in Spanish, divided in parts, for print ([source][book-source]).
 
-[manual]: https://github.com/mariovagomarzal/quire/blob/main/docs/manual.pdf
-[article]: https://github.com/mariovagomarzal/quire/blob/main/examples/article.pdf
-[article-source]: https://github.com/mariovagomarzal/quire/blob/main/examples/article.typ
-[book]: https://github.com/mariovagomarzal/quire/blob/main/examples/book.pdf
-[book-source]: https://github.com/mariovagomarzal/quire/blob/main/examples/book.typ
+[manual]: docs/manual.pdf
+[article]: examples/article.pdf
+[article-source]: examples/article.typ
+[book]: examples/book.pdf
+[book-source]: examples/book.typ
 
 ### Fonts
 
@@ -97,4 +97,7 @@ fonts of the default style.
 
 ## License
 
-The package is distributed under the [MIT license](LICENSE).
+The package is distributed under the [MIT license](LICENSE), except for the files of the template directory
+(`template/`), which are copied into new projects by `typst init` and are distributed under the
+[MIT No Attribution license](https://spdx.org/licenses/MIT-0.html), so that documents created from them can be used
+and shared without restriction.
